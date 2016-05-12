@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfProject.CreateCostOnCarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject"
+        mc:Ignorable="d"
+        Title="CreateCostOnCarWindow" Height="400" Width="400">
+    <StackPanel Orientation="Vertical">
+        <Label Content="Lägg till kostnad" FontSize="20"></Label>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Datum"/>
+            <DatePicker x:Name="datepicker"></DatePicker>
+            <Label Content="Fordon" Margin="0,10,0,0"></Label>
+            <ComboBox x:Name="cmbCars" DisplayMemberPath="Regnr"></ComboBox>
+            <Label Content="Typ av kostnad" Margin="0,10,0,0"></Label>
+            <ComboBox x:Name="cmbCostType" DisplayMemberPath="Type"></ComboBox>
+            <Label Content="Kostnad" Margin="0,10,0,0"></Label>
+            <TextBox x:Name="txtCost"></TextBox>
+            <Label Content="Kommentar" Margin="0,10,0,0"></Label>
+            <TextBox x:Name="txtComment" Width="120" MaxLength="50"></TextBox>
+            <Button x:Name="btnCreateCost" Content="Lägg till kostnad" Click="btnCreateCost_Click" ></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

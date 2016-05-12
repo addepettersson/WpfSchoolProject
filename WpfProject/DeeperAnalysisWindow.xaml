@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfProject.DeeperAnalysisWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject"
+        mc:Ignorable="d"
+        Title="Djupare analys" Height="500" Width="700">
+    <StackPanel>
+        <Label Content="Djupare analys" FontSize="20"/>
+        <DataGrid x:Name="DataGridCars" SelectionChanged="DataGridCars_SelectionChanged" AutoGenerateColumns="False" Margin="0,0,108,0">
+            <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding Regnr}" Header="Registreringsnummer" />
+            <DataGridTextColumn  Binding="{Binding TypeOfCar}" Header="Typ av fordon" />
+            <DataGridTextColumn  Binding="{Binding Mileage}" Header="Körsträcka senaste månaden" />
+            <DataGridTextColumn  Binding="{Binding Consumation}" Header="Snittförbrukning senaste månaden" />
+        </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblAverageConsumaiton"/>
+        <Label x:Name="lblFuelPriceOnKM"/>
+        <Label x:Name="lblTotalFuelPrice"/>
+        <Label x:Name="lblTotalMileage"/>
+        <DataGrid x:Name="DataGridEachCar" AutoGenerateColumns="False" Margin="0,0,418,0" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Regnr" Binding="{Binding Regnr}" Header="Registreringsnummer" />
+                <DataGridTextColumn x:Name="Mileage" Binding="{Binding Mileage}" Header="Miltal" />
+                <DataGridTextColumn x:Name="TotalFuelPrice" Binding="{Binding TotalFuelPrice}" Header="Totalkostnad" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

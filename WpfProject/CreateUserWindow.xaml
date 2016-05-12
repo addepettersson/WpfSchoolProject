@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfProject.CreateUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject"
+        mc:Ignorable="d"
+        Title="CreateUserWindow" Height="350" Width="400">
+    <StackPanel Orientation="Vertical" Margin="30">
+        <StackPanel HorizontalAlignment="Center" Width="300">
+            <Label Content="Skapa användare" FontSize="30"></Label>
+            <Label Content="Användarnamn"/>
+            <TextBox x:Name="txtUserName" TextChanged="txtUserName_TextChanged"></TextBox>
+            <Label Content="Lösenord"/>
+            <PasswordBox x:Name="txtPassword" PasswordChanged="txtPassword_PasswordChanged"></PasswordBox>
+            <Label Content="Administratör:"/>
+            <CheckBox x:Name="chbIsAdmin"></CheckBox>
+            <Button x:Name="CreateUser" IsEnabled="{Binding ElementName=txtUserName, Path=Text.Length, Mode=OneWay}" Content="Skapa användare" Margin="0,10" Click="CreateUser_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

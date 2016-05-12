@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfProject.CreateCarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject"
+        mc:Ignorable="d"
+        Title="CreateCarWindow" Height="500" Width="300">
+    <StackPanel Orientation="Vertical">
+        <StackPanel HorizontalAlignment="Center">
+            <Label>Registreringsnummer: *</Label>
+            <TextBox x:Name="txtRegNr"></TextBox>
+            <Label Content="Ursprunglig mätarställning(KM): *"></Label>
+            <TextBox x:Name="txtKm"></TextBox>
+            <Label Content="Färg:"></Label>
+            <ComboBox x:Name="cmbColour" DisplayMemberPath="Color"></ComboBox>
+            <Label Content="Biltyp:*"></Label>
+            <ComboBox x:Name="cmbCarType" DisplayMemberPath="Type"></ComboBox>
+            <Label Content="Årsmodell:"></Label>
+            <ComboBox x:Name="cmbYear" DisplayMemberPath="Year"></ComboBox>
+            <Label Content="Bränsletyp: *"></Label>
+            <ComboBox x:Name="cmbFuelType" DisplayMemberPath="FuelType"></ComboBox>
+            <Label Content="Beskrivning"></Label>
+            <TextBox x:Name="txtDescript" ></TextBox>
+            <Button x:Name="btnCreateCar" Content="Skapa bil" Click="btnCreateCar_Click"></Button>
+            <Label Content="* Obligatorisk"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

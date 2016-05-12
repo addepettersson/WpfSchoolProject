@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfProject.AdminJournalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject"
+        mc:Ignorable="d"
+        Title="AdminJournalWindow" Height="450" Width="800">
+    <StackPanel Orientation="Vertical">
+        <Label Content="Skapa en körjournal" FontSize="20"></Label>
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <Label Content="Datum:"></Label>
+            <DatePicker x:Name="datepicker"></DatePicker>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Fordon:"></Label>
+            <ComboBox SelectionChanged="cmbCars_SelectionChanged" DisplayMemberPath="Regnr" x:Name="cmbCars" Width="80" Margin="10,0"></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10" >
+            <Label Content="Bränsletyp:"></Label>
+            <ComboBox DisplayMemberPath="FuelType" x:Name="cmbFuelType" Width="80" Margin="10,0" SelectionChanged="cmbFuelType_SelectionChanged"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10" >
+            <Label Content="Chaufför:"></Label>
+            <ComboBox DisplayMemberPath="UserName" x:Name="cmbUser" Width="80" Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,80" >
+            <Label Content="Mätarställning KM:"/>
+            <TextBox x:Name="txtMileage" Width="80"/>
+            <Label Content="Enhetspris:" Margin="40,0"/>
+            <TextBox Width="80" x:Name="txtUnitPrice" Margin="-30,0" TextChanged="CountFuel"/>
+            <Label Content="Mängd:" Margin="70,0"/>
+            <TextBox Width="80" x:Name="txtmass" Margin="-60,0" TextChanged="CountFuel"/>
+            <Label Content="Totalpris:" Margin="70,0"/>
+            <TextBox Width="80" x:Name="txtTotalPrice" Margin="-60,0" IsReadOnly="True"/>
+        </StackPanel>
+        <Button Content="Skapa körjournal" x:Name="btncreateJournal"  Width="200" Click="btncreateJournal_Click" />
+    </StackPanel>
+</Window>

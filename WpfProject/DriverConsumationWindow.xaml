@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfProject.DriverConsumationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject"
+        mc:Ignorable="d"
+        Title="Chaufförens förbrukning" Height="400" Width="800">
+    <StackPanel Orientation="Vertical">
+        <Label Content="Visa min förbrukning" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <Label Content="Välj registreringsnummer"/>
+            <ComboBox DisplayMemberPath="Regnr" Text="Regnr" x:Name="cmbRegnr" Width="100" SelectionChanged="cmbRegnr_SelectionChanged"></ComboBox>
+            <Label Content="Välj ett datum:" Margin="20,0"/>
+            <DatePicker x:Name="datepicker" SelectedDateChanged="datepicker_SelectedDateChanged"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Snittförbrukning sen början:"></Label>
+            <TextBox x:Name="txtConsumationAll" IsReadOnly="True" Width="100"/>
+            <Label Content="Bränslekostnad från start:" Margin="20,0"/>
+            <TextBox x:Name="txtTotalCostAll" IsReadOnly="True" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,30">
+            <Label Content="Snittförbrukning per valt år:"/>
+            <TextBox x:Name="txtConsumationYear" IsReadOnly="True" Width="100"/>
+            <Label Content="Bränslekostnad från valt år:" Margin="20,0"/>
+            <TextBox x:Name="txtTotalCostYear" IsReadOnly="True" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <Label Content="Snittförbrukning på vald månad:"/>
+            <TextBox x:Name="txtConsumationMonth" Width="100"/>
+            <Label Content="Bränslekostnad på vald månad:" Margin="20,0"/>
+            <TextBox x:Name="txtTotalCostMonth" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <Label Content="Snittförbrukning på senaste körpass:"/>
+            <TextBox x:Name="txtConsumationOnLastDrive" Width="100"/>
+            <Label Content="Bränslekostnad på senaste körpass:" Margin="20,0"/>
+            <TextBox x:Name="txtTotalCostOnLastDrive" Width="100"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

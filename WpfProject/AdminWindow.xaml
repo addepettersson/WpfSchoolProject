@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfProject.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject"
+        mc:Ignorable="d"
+        Title="Administrationsvy" Height="425" Width="400">
+    <StackPanel>
+        <Button Margin="0,10" x:Name="btnCreateUser" Height="20" Content="Skapa ny användare" Width="150" Click="btnCreateUser_Click"/>
+        <Button Margin="0,10" x:Name="btnCreateCar" Content="Lägg till bil" Height="20" Width="150" Click="btnCreateCar_Click"/>
+        <Button Margin="0,10" x:Name="btnCreateCarCosts" Content="Lägg till kostnad på fordon" Width="150" Click="btnCreateCarCosts_Click" />
+        <Button Margin="0,10" x:Name="btnCreateDriverJournal" Content="Lägg till körjournal" Click="btnCreateDriverJournal_Click" Width="150"></Button>
+        <Button Margin="0,10" x:Name="btnSeeConsumations" Content="Se förbrukning" Width="150" Click="btnSeeConsumations_Click"/>
+        <Button Margin="0,10" x:Name="btnChangeApiConnection" Content="Ändra i app.config" Width="150" Click="btnChangeApiConnection_Click"/>
+        <Button Margin="0,10" x:Name="btnDeeperAnalysis" Content="Se djupare analys" Width="150" Click="btnDeeperAnalysis_Click"/>
+        <Label Content="Bästa chaufför senaste månaden: "></Label>
+        <Label x:Name="txtBestDriver"/>
+        <Label Content="Bästa fordon senaste månaden:"/>
+        <Label x:Name="txtBestCar"/>
+    </StackPanel>
+</Window>
